@@ -66,12 +66,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>To Do List</h1>
+      <h1>Barbie</h1>
+      <p>To Do List</p>
       <form onSubmit={handleSubmit}>
         <input type="text" onChange={(e) => setTodo(e.target.value)} value={todo} />
         <button type="submit">Add To Do</button>
       </form>
-      {todos.map((todo) => <div key={todo.id}>
+      {todos.map((todo) => <div className='todo-text' key={todo.id}>
 
         {todoEditing == todo.id ? 
         (<input 
@@ -80,24 +81,23 @@ function App() {
             value={editingText} 
           />) 
           : 
-          (<div>{todo.text} </div>)}
+          (<div><label>{todo.text}</label> </div>)}
         
 
-
-        <button onClick={() => deleteTodo(todo.id)}>Delete</button>
         <input 
           type="checkbox"
           onChange={() => toggleComplete(todo.id)}
           checked={todo.completed}
         />
+        <button onClick={() => deleteTodo(todo.id)}>Delete</button>
 
         {todoEditing === todo.id ? (
           <button onClick={() => editTodo(todo.id)}>
-            Submit Edits
+            Apply changes
           </button>
         ) : (
           <button onClick={() => setTodoEditing(todo.id)}>
-            Edit Todo
+            Edit To do
           </button>
         )}
 

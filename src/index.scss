@@ -1,3 +1,9 @@
+
+@font-face {
+  font-family: barbieFont;
+  src: url(../public/barbie.ttf);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +11,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #F6D9DD;
+  ::before { // background image
+    content: "";
+    // Image source: https://www.pexels.com/photo/close-up-of-pink-balloons-13400950/
+    background-image: url('../public/balloons.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.009;
+    z-index: -1;
+  }
 }
 
 code {
@@ -13,8 +33,87 @@ code {
 }
 
 h1 {
-  font-size: 45px;
-  font-family: 'Bubblegum Sans';
-  text-decoration:solid 1px blue;
-  -webkit-text-stroke: white
+  font-size: 90px;
+  font-family: barbieFont;
+  color: #D9418C;
+  -webkit-text-stroke: 1px white;
+  margin-bottom: 15px;
+}
+
+p:nth-of-type(1) { // tagline
+  font-size: 80px;
+  font-family: barbieFont;
+  margin-top: 0;
+  color: #D9418C;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+form {
+  background-color: #D9418C;
+  width: 65%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 65% auto;
+  column-gap: 10px;
+  border-radius: 4px;
+  input {
+    border: 1px solid #F6D9DD;
+    border-radius: 4px;
+    height: 30px;
+    font-size: 20px;
+    &:focus-visible {
+      border: 1px solid #F6D9DD;    }
+  }
+  button {
+    background-color: #F6D9DD;
+    color: #D9418C;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    &:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    &:active {
+      background-color: #F6D9DD;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+      transform: translateY(2px);
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.todo-text {
+  background-color: white;
+  width: 65%;
+  padding: 20px;
+  margin: 10px auto;
+  row-gap: 10px;
+  border-radius: 4px;
+  border: 0.1px solid #D9418C;
+  display: inline;
+  display: grid;
+  grid-template-columns: 65% auto auto auto;
+  column-gap: 10px;
+  button {
+    background-color: #D9418C;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    &:nth-of-type(2) {
+      background-color: #F6D9DD;
+      color: #D9418C;
+    }
+  }
+  div {
+    text-align: left;
+    font-size: 20px;
+  }
 }
