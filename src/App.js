@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import { toHaveDescription } from '@testing-library/jest-dom/dist/matchers';
 
 function App() {
@@ -66,6 +66,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>To Do List</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" onChange={(e) => setTodo(e.target.value)} value={todo} />
         <button type="submit">Add To Do</button>
